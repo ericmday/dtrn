@@ -1,0 +1,90 @@
+<!-- Copyright 2022 DeepMind Technologies Limited.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<!DOCTYPE html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='styles.css'>
+  <title>Dramatron</title>
+</head>
+<body class='landing'>
+
+  <div class='intro-input'>
+    <div class='title'>
+      <a class='top-main' href='./index.html'>
+        <img src='./logo.svg' alt='Dramatron'>
+      </a>
+    </div>
+    <div class='text'>
+      <p>Please read
+        <a href='./details.html'><b>about Dramatron</b></a>
+        before continuing, and give us a ⭐ on <a href="https://github.com/deepmind/dramatron">GitHub</a>.
+        For more complex interactions (edit history, choice of prompts, etc.), please check out
+        <a href='https://github.com/deepmind/dramatron/blob/main/colab/dramatron.ipynb'>
+         this Colab</a>.
+
+      </p>
+    </div>
+    <div class='text'>
+      <p>You’ll need an <a href='https://beta.openai.com/account/api-keys'>OpenAI API key</a> to use Dramatron.</p>
+    </div>
+
+    <input type='text' id='apikey' placeholder='GPT-3 API key'>
+
+    <div class='text invalid-message' id='invalid-key'>
+      Error: invalid credential.
+    </div>
+    <div class='text invalid-message' id='quota-error'>
+      Error: the provided key has insufficient quota.
+    </div>
+    <div class='text invalid-message' id='timeout-key'>
+      Error: the API request timed out.
+    </div>
+    <div class='text'>
+      <p>The language model may generate offensive text. If you choose, you
+      can provide a
+      <a href='https://developers.perspectiveapi.com/s/docs-enable-the-api'>
+        Perspective API key</a>, which will hide model outputs that exceed a
+      toxicity threshold and prompt you to regenerate the text.</p>
+    </div>
+
+    <input type='text' id='perspectivekey' placeholder='Perspective API key'>
+
+    <div class='text invalid-message' id='invalid-perspective'>
+      Error: invalid credential.
+    </div><br>
+    <div class='submit-keys'>
+      <button id='submit-apikeys'>Get started</button>
+    </div>
+  <hr>
+  </div>
+
+  <div class='text' id='bottom-notes'>
+    <p>Dramatron is a script writing tool that leverages large language models.
+       The work was published as a pre-print in Mirowski, Mathewson et al (2022)
+       "<a href='https://arxiv.org/abs/2209.14958'>Co-Writing Screenplays and
+         Theatre Scripts with Language Models: An Evaluation by Industry
+         Professionals</a>".</p>
+    <p>This page allows you to use a basic version of the Dramatron tool. For
+       more control over the generation settings and parameters, please check
+       out
+       <a href='https://github.com/deepmind/dramatron/blob/main/colab/dramatron.ipynb'>
+         this Colab</a>.
+    </p>
+    <p id='credit'>Dramatron frontend built by Juliette Love.</p>
+  </div>
+
+  <script type='module' src='./index.js'></script>
+</body>
