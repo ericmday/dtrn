@@ -19,8 +19,11 @@
 import * as outputParsers from './output_parsers.js';
 import * as prefixes from './prefixes.js';
 
-const VALIDATION_URL = 'https://api.openai.com/v1/models';
-const COMPLETION_URL = 'https://api.openai.com/v1/completions';
+// const VALIDATION_URL = 'https://api.openai.com/v1/models';
+// const COMPLETION_URL = 'https://api.openai.com/v1/completions';
+
+const VALIDATION_URL = 'http://localhost:5001/v1/models';
+const COMPLETION_URL = 'http://localhost:5001/v1/completions';
 const PERSPECTIVE_URL =
     'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze';
 
@@ -29,7 +32,7 @@ const PERSPECTIVE_THRESHOLD = 0.8;
 const MAX_FAILURES = 5;
 const REQUEST_TIMEOUT = 60 * 1000; // 60 seconds.
 
-const MODEL = 'text-davinci-002';
+const MODEL = 'llava-13b-v0-4bit-128g';
 const MODEL_MAX_LENGTH = 4097; // Maximum input size supported by model.
 
 const TEMPERATURE = 0.99;
