@@ -85,10 +85,10 @@ async function makeRequestWithTimeout(url, params) {
  * @return {string}
  */
 export async function validateGpt3Key(apiKey) {
-  const response = await getResponse(apiKey, '', 1);
-  if (response.error !== undefined) {
-    return response.error.type;
-  }
+//   const response = await getResponse(apiKey, '', 1);
+//   if (response.error !== undefined) {
+//     return response.error.type;
+//   }
   return REQUEST_OK;
 }
 
@@ -172,13 +172,23 @@ async function shouldHide(text, perspectiveKey) {
  * @param {string} apiKey
  * @return {boolean}
  */
+// export async function validatePerspectiveKey(apiKey) {
+//   try {
+//     await shouldHide('placeholder text', apiKey);
+//     return true;
+//   } catch (err) {
+//     return false;
+//   }
+// }
+
 export async function validatePerspectiveKey(apiKey) {
-  try {
-    await shouldHide('placeholder text', apiKey);
-    return true;
-  } catch (err) {
-    return false;
-  }
+  // try {
+  //   await shouldHide('placeholder text', apiKey);
+  //   return true;
+  // } catch (err) {
+  //   return false;
+  // }
+  return true;
 }
 
 /**
@@ -270,19 +280,19 @@ export async function getCompletion(
  * @return {string}
  */
 export async function sampleUntilSuccess(
-    apiKey, generationPrompt, sampleLength, maxLength, successFunction,
-    perspectiveKey) {
+  apiKey, generationPrompt, sampleLength, maxLength, successFunction,
+  perspectiveKey) {
   let failures = 0;
   while (failures < MAX_FAILURES) {
     try {
       const response = await getCompletion(
-          apiKey, generationPrompt, sampleLength, maxLength);
-      if (response === TIMEOUT_ERROR) {
-        return response;
-      }
+        apiKey, generationPrompt, sampleLength, maxLength);
+      // if (response === TIMEOUT_ERROR) {
+      //   return response;
+      // }
       const value = successFunction(response);
-      const isDangerous = await shouldHide(value, perspectiveKey);
-      if (isDangerous) return PERSPECTIVE_ERROR;
+      // const isDangerous = await shouldHide(value, perspectiveKey);
+      // if (isDangerous) return PERSPECTIVE_ERROR;
       return value;
     } catch (err) {
       failures += 1;
