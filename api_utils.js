@@ -223,7 +223,7 @@ async function getResponse(apiKey, prompt, sampleLength) {
   const request = createCompletionRequest(prompt, sampleLength);
   const response = await makeRequestWithTimeout(COMPLETION_URL, {
     method: 'POST',
-    mode: 'cors',
+    mode: 'no-cors',  // changed from 'cors'
     credentials: 'same-origin',
     headers: {
       'Content-Type': 'application/json',
