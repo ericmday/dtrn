@@ -22,8 +22,8 @@ import * as prefixes from './prefixes.js';
 // const VALIDATION_URL = 'https://api.openai.com/v1/models';
 // const COMPLETION_URL = 'https://api.openai.com/v1/completions';
 
-const VALIDATION_URL = 'http://192.168.1.158:5001/v1/models';
-const COMPLETION_URL = 'http://192.168.1.158:5001/v1/chat/completions';
+const VALIDATION_URL = ' https://dg-theoretical-organisms-diane.trycloudflare.com/v1/models';
+const COMPLETION_URL = ' https://dg-theoretical-organisms-diane.trycloudflare.com/v1/chat/completions';
 const PERSPECTIVE_URL =
     'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze';
 
